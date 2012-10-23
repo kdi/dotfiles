@@ -1,10 +1,12 @@
 # Folder view configuration files
 .DS_Store
+.DS_Store?
 Desktop.ini
 
 # Thumbnail cache files
 ._*
 Thumbs.db
+ehthumbs.db
 
 # Vim swap files.
 .swp
