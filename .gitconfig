@@ -75,3 +75,15 @@
 	pushInsteadOf = "git://gist.github.com/"
 [url "git://gist.github.com/"]
 	insteadOf = "gist:"
+[url "ssh://git%kdiweb.net@kdiweb.net/home/96197/data/git/"]
+	insteadof = git@kdiweb.net:
+[url "ssh://git@odysseus/home/git/"]
+	insteadof = git@local:
+	
+# Support SQLite3 databases
+[merge "sqlite3"]
+    name = sqlite3 merge driver
+    driver = merge-sqlite3 %O %A %B
+[diff "sqlite3"]   
+    name = sqlite3 diff driver  
+    command = diff-sqlite3 
