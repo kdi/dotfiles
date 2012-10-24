@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# Node Setup
+
+
+# Install node and npm (check first)
+if test ! $(which node)
+then
+  brew install node
+else
+  echo "  + Node found"
+fi
+
+if test ! $(which npm)
+then
+  brew install npm
+else
+  echo "  + NPM found"
+fi
+
+
+# Install commonly used modules
+npm install express -g
+npm install mongoose -g
+npm install brisk -g
+npm install crudr -g
