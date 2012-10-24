@@ -9,6 +9,14 @@
 . setup/node
 . setup/bash
 
+cd ~
+# backup existing dotfiles
+mkdir -p ~/.dotfiles.bak/
+cp ~/.* ~/.dotfiles.bak/
+
+echo "Your original .bash_profile has been backed up to .bash_profile.bak"
+
+
 cd "$(dirname "$0")"
 git pull
 
