@@ -20,6 +20,7 @@ fi
 
 
 # Install commonly used modules
+npm install bower -g
 npm install express -g
 npm install mongoose -g
 npm install brisk -g
