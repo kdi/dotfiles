@@ -79,7 +79,9 @@
 	insteadof = git@kdiweb.net:
 [url "ssh://git@odysseus/home/git/"]
 	insteadof = git@local:
-	
+[url "git@web.kdi.co:kdi/"]
+	insteadof = git@kdi:
+
 # Support SQLite3 databases
 [merge "sqlite3"]
     name = sqlite3 merge driver
