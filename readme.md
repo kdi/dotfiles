@@ -1,8 +1,9 @@
 kdi::dotfiles
 =========
 
-This is the common configuration files on the machines of chronic developers of K&D interactive 
+This is the common configuration files on the machines of developers at K&D interactive 
 
+Also contains the executable 'kdi' which encapsulates common procedures.
 
 ## Credits
 
