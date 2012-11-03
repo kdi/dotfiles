@@ -10,8 +10,8 @@
 # split the dir to it's folders
 DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 folders=(${DIR//\// })
-# the project name should be the second parent
-i=$(expr ${#folders[@]} - 2)
+# the project name should be the third parent
+i=$(expr ${#folders[@]} - 3)
 # assuming the 'gitshots' script is in the bin folder...
 #cd ~/bin
 gitshots ${folders[$i]}
