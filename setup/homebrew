@@ -13,4 +13,7 @@ then
   exit
 else
   echo "  + Homebrew found."
+  # Let's install some software ;)
+  # - Imagesmap
+  brew install imagesnap
 fi
