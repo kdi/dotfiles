@@ -1,0 +1,208 @@
+#!/bin/sh
+ 
+# kdi executable
+## About this script: 
+## This progam sums up common functions 
+## for the K&D Interactive network 
+
+## Usage
+## - Type: kdi <command> <params>
+
+## VARIABLES
+DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+user="git"
+server="web.kdi.co"
+root="/var/www"
+
+mt_user="git"
+mt_server="kdiweb.net"
+mt_root="/home/96197/domains"
+
+
+## DEPENDENCIES
+for file in $DIR/cfg; do
+	[ -r "$file" ] && source "$file"
+done
+unset file
+
+
+## FUNCTIONS
+
+function setup(){
+
+	# Conditions
+	if [ $# -lt 1 ] 
+    then die "domain name needed." 
+    fi
+    # Questions
+    read -p "You are about to bind the domain $1 with this folder. Proceed? (y/n)"
+    [ "$REPLY" == y ] || die "Aborting..."
+    # default configuration
+    echo "[site]" > .kdi
+    echo "domain='$1'" >> .kdi
+    #echo "server='$2'" >> .kdi
+    
+    # prefered method - not working 
+    #cfg_section_site(){
+    	#domain=$1
+    #}
+	#cfg_writer > .kdi
+}
+
+
+
+function sync(){
+    
+    echo "Syncing repo with remote server"
+    
+    git pull origin master
+    git push origin master
+    git submodule init
+    git submodule update
+    
+}
+
+function data(){
+
+	# Conditions
+	if [ $# -lt 1 ] 
+    then die "Data action needed. Aborting..." 
+    fi
+    if [ $# -lt 2 ] 
+    then die "DB name required. Aborting..." 
+    fi
+    if [ $2 == "config" ] 
+    then die "You cannot access the configuration. Aborting..." 
+    fi
+    
+    # Questions
+    read -p "You are trying to sync data with the remote server. Proceed? (y/n)"
+    [ "$REPLY" == y ] || die "Aborting..."
+
+    read -p "Is the site hosted on the Media Temple server (kdiweb.net)? (y/n)"
+    [ "$REPLY" == y ] || die "Sorry, no other server is currently supported."
+
+    
+    #use configuration
+    cfg_section_site
+    
+	site="dev.$domain"
+    file="$2.sqlite"
+    
+    case "$1" in
+    
+    get)  echo "Getting $file from $site"
+    
+            scp -r $mt_user%$mt_server@$mt_server:$mt_root/$site/data/$file ./data/$file
+            
+			die "Done!"
+        ;;
+    set)  echo  "Sending $file to $site"
+    
+            scp -r ./data/$file $mt_user%$mt_server@$mt_server:$mt_root/$site/data/$file
+            
+			die "Done!"
+        ;;
+    esac
+
+}
+
+
+function site(){
+	
+	# Conditions
+	if [ $# -lt 1 ] 
+    then die "Context expected. Aborting..." 
+    fi
+    
+    #use configuration
+    cfg_section_site
+    
+	site="dev.$domain"
+    
+    case "$1" in
+    
+    media)  echo "Getting media from $site"
+                 
+            # find the right directory 
+            if [ -d "./media" ]; then
+                media="media"
+            else
+                media="html/media"
+            fi
+			
+            read -p "Ready to download all the media from $site to $media. Proceed? (y/n)"
+            [ "$REPLY" == y ] || die "Sorry, no other server is currently supported."
+
+            scp -r $mt_user%$mt_server@$mt_server:$mt_root/$site/$media ./$media
+            
+			die "Done!"
+        ;;
+    esac
+    
+}
+
+
+## HELPERS
+# - Load config file
+function getConfig(){
+	
+if [ ! -f ".kdi" ]
+then
+		# echo " No config file present - continuing..."
+        return
+else
+	cfg_parser ".kdi"
+fi
+
+}
+
+
+function die(){
+  echo $@
+  exit 1
+}
+
+
+
+## LOGIC
+
+# - Check if there's at least one variable
+if [ $# -lt 1 ]
+then 
+  die "Command expected..."
+else 
+  command=$1
+fi
+
+
+# - Load the config
+getConfig
+
+
+# - Find the right command
+case "$command" in
+
+    setup)  echo 		"::::::::::: SETUP :::::::::::"
+        setup  $2
+        exit 1
+        ;;
+    sync)  echo 		"::::::::::: SYNC ::::::::::::"
+        sync  $2 $3
+        exit 1
+        ;;
+    data)  echo 		":::::::::::: DATA ::::::::::::"
+   		data $2 $3	
+        exit 1
+        ;;
+    site)  echo 			":::::::::::: SITE :::::::::::::"
+    	site $2
+        exit 1
+        ;;
+    *) die "Command not recognized"
+        ;;
+esac
+
+# - If everthing else fails... 
+die "WTF are you doing!"
