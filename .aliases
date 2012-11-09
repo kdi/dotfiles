@@ -1,3 +1,9 @@
+# ssh to kdi servers
+alias ssh.mt="ssh kdiweb.net@s96197.gridserver.com"
+alias ssh.kdi="ssh root@web.kdi.co"
+alias ssh.git="ssh git@web.kdi.co"
+alias ssh.s01="ssh root@s01.kdiweb.net"
+
 # Easier navigation: .., ..., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."
