@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# Source: http://stackoverflow.com/a/5810488/1247359
+oldrev=$(git rev-parse $1)
+newrev=$(git rev-parse $2)
+refname="$3"
+case "$refname","$rev_type" in
+  refs/tags/*,tag)
+    # annotated tag
+    refname_type="annotated tag"
+    function="atag"
+    short_refname=${refname##refs/tags/}
+    # deploy
+    # ...
+  ;;
