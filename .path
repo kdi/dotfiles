@@ -8,4 +8,9 @@ PATH="$HOME/local/bin:$PATH"
 # Add the npm bin folder
 PATH="/usr/local/share/npm/bin:$PATH"
 
+# add z.sh bin folder
+PATH="$ZSH/bin:$PATH"
+
 export PATH
+
+export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"

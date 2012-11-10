@@ -147,3 +147,6 @@ alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/La
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
 	alias "$method"="lwp-request -m '$method'"
 done
+
+# Pipe my public key to my clipboard. 
+alias pubkey="more ~/.ssh/id_dsa.pub | pbcopy | echo '=> Public key copied to clipboard.'"
