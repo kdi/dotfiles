@@ -91,12 +91,16 @@ shopt -s nocaseglob
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US"
 
+# Keys 
+
+# Generate a new ssh-rsa key
+newkey () { cd ~/.ssh | mkdir _old | cp id_rsa* _old | rm id_rsa* | ssh-keygen -t rsa -C "$1"; }
+
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
 
 # Add tab completion for `defaults read|write NSGlobalDomain`
 # You could just use `-g` instead, but I like being explicit
 complete -W "NSGlobalDomain" defaults
-
 
 
