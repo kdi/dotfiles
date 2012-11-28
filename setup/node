@@ -23,5 +23,6 @@ fi
 npm install bower -g
 npm install express -g
 npm install mongoose -g
+npm install weinre -g
 npm install brisk -g
 npm install crudr -g
