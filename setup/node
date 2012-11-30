@@ -24,5 +24,6 @@ npm install bower -g
 npm install express -g
 npm install mongoose -g
 npm install weinre -g
+npm install less -g
 npm install brisk -g
 npm install crudr -g
