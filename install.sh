@@ -2,8 +2,14 @@
 #
 # install things...
 
-# Assume everyone's on OS X and run Homebrew (*nix-ers beware)
-. setup/homebrew
+# Don't assume everyone's on OS X...
+os=`uname`
+if [[ "$os" == 'Linux' ]]; then
+	# do stuff for linux
+elif [[ "$is" == 'Darwin' ]]; then
+	# Homebrew (*nix-ers beware)
+	. setup/homebrew
+fi
 
 # setup other software
 . setup/node
