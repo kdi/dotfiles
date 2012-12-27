@@ -73,6 +73,7 @@ alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup 
 
 # Node.js
 alias nose="sudo node server.js"
+alias node-env="export NODE_ENV=$1 | echo Node environment set to $1"
 
 
 # IP addresses
