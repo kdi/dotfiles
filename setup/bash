@@ -17,3 +17,9 @@ chmod +x ~/code/z/z.sh
 
 # add this to the bash_profile file if it aint there.
 #   . ~/code/z/z.sh
+
+
+# Other Configuration
+# 
+# Uncomment this line to allow using node without a password 
+#sudo echo "%admin ALL=NOPASSWD: /usr/local/bin/node"  >> /etc/sudoers
