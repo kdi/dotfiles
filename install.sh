@@ -3,11 +3,14 @@
 # install things...
 
 # Don't assume everyone's on OS X...
+platform='unknown'
 os=`uname`
 if [[ "$os" == 'Linux' ]]; then
 	# do stuff for linux
-elif [[ "$is" == 'Darwin' ]]; then
+	platform='linux'
+elif [[ "$os" == 'Darwin' ]]; then
 	# Homebrew (*nix-ers beware)
+	platform='osx'
 	. setup/homebrew
 fi
 
