@@ -29,6 +29,7 @@ alias oo="open ."
 
 # programs
 alias hosts='sudo $EDITOR /etc/hosts'   # yes I occasionally 127.0.0.1 twitter.com ;)
+alias redis="redis-server ~/.redis/redis.conf"
 
 
 # Detect which `ls` flavor is in use
