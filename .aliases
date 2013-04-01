@@ -1,5 +1,6 @@
 # ssh to kdi servers
 alias ssh.mt="ssh kdiweb.net@s96197.gridserver.com"
+alias ssh.mtg="ssh git%kdiweb.net@s96197.gridserver.com"
 alias ssh.kdi="ssh root@web.kdi.co"
 alias ssh.git="ssh git@web.kdi.co"
 alias ssh.s01="ssh root@s01.kdiweb.net"
@@ -70,6 +71,12 @@ alias undopush="git push -f origin HEAD^:master"
 
 # git root
 alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
+
+# pretty git log
+alias gl='git log --oneline --decorate'
+
+# git backup to repo
+alias gitup='git push --mirror'
 
 
 # Node.js
