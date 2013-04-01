@@ -18,4 +18,9 @@ else
   brew install grc coreutils
   # - Imagesmap
   brew install imagesnap
+  # - Networking
+  brew install wget
+  # - Databases
+  brew install redis
+
 fi
