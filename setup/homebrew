@@ -22,5 +22,7 @@ else
   brew install wget
   # - Databases
   brew install redis
+  # - image manipulation
+  brew install imagemagick
 
 fi
