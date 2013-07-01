@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# Bash Dependencies
+
+sudo yum install ImageMagick
