@@ -19,14 +19,17 @@ else
 fi
 
 
+
 # Install commonly used modules
-npm install bower -g
-npm install express -g
-npm install mongoose -g
-npm install weinre -g
-npm install less -g
-npm install coffee-script -g
-npm install grunt -g
-npm install brisk -g
-npm install crudr -g
-npm install uglify-js -g
+npm install -g bower
+npm install -g express
+npm install -g aws-lib
+npm install -g s3
+npm install -g mongoose
+npm install -g webshot
+npm install -g less
+npm install -g imagemagick
+npm install -g grunt
+npm install -g brisk
+npm install -g crudr
+npm install -g uglify-js
