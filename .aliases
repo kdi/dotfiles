@@ -10,7 +10,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-alias ~="cd ~" 
+alias ~="cd ~"
 alias -- -="cd -"
 
 # Shortcuts
@@ -31,6 +31,8 @@ alias oo="open ."
 # programs
 alias hosts='sudo $EDITOR /etc/hosts'   # yes I occasionally 127.0.0.1 twitter.com ;)
 alias redis="redis-server ~/.redis/redis.conf"
+alias lesscss="lessc assets/less/main.less assets/css/main.css"
+alias lessmin="lessc -x assets/less/main.less assets/css/main.min.css"
 
 
 # Detect which `ls` flavor is in use
@@ -162,5 +164,5 @@ for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
 	alias "$method"="lwp-request -m '$method'"
 done
 
-# Pipe my public key to my clipboard. 
+# Pipe my public key to my clipboard.
 alias pubkey="more ~/.ssh/id_dsa.pub | pbcopy | echo '=> Public key copied to clipboard.'"
