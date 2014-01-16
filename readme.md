@@ -10,8 +10,11 @@ Also contains the executable 'kdi' which encapsulates common procedures.
 ### Easier navigation:
 
 .. = "cd .."
+
 ... = "cd ../.."
+
 .... = "cd ../../.."
+
 ..... = "cd ../../../.."
 
 ### GIT STUFF
