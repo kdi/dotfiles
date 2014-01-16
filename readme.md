@@ -7,27 +7,27 @@ Also contains the executable 'kdi' which encapsulates common procedures.
 
 ## Some common and useful aliases
 
-# Easier navigation:
+### Easier navigation:
 
 .. = "cd .."
 ... = "cd ../.."
 .... = "cd ../../.."
 ..... = "cd ../../../.."
 
-# GIT STUFF
+### GIT STUFF
 g = "git"
 undopush = "git push -f origin HEAD^:master"
 
-# Node.js
+### Node.js
 alias nose="sudo node server.js"
 alias node-env="export NODE_ENV=$1 | echo Node environment set to $1"
 
-# Enhanced WHOIS lookups
+### Enhanced WHOIS lookups
 alias whois="whois -h whois-servers.net"
 
 myip="ifconfig | grep inet  | grep -v 127.0.0.1 | cut -d\   -f2"
 
-# Less commands
+### Less commands
 lesscss = "lessc assets/less/main.less assets/css/main.css"
 lessmin = "lessc -x assets/less/main.less assets/css/main.min.css"
 
