@@ -19,10 +19,12 @@ Also contains the executable 'kdi' which encapsulates common procedures.
 
 ### GIT STUFF
 g = "git"
+
 undopush = "git push -f origin HEAD^:master"
 
 ### Node.js
 nose = "sudo node server.js"
+
 node-env = "export NODE_ENV=$1 | echo Node environment set to $1"
 
 ### Enhanced WHOIS lookups
