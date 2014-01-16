@@ -32,6 +32,7 @@ myip = "ifconfig | grep inet  | grep -v 127.0.0.1 | cut -d\   -f2"
 
 ### Less commands
 lesscss = "lessc assets/less/main.less assets/css/main.css"
+
 lessmin = "lessc -x assets/less/main.less assets/css/main.min.css"
 
 For a complete list visit [aliases](https://github.com/kdi/dotfiles/blob/master/.aliases)
