@@ -80,6 +80,9 @@ alias gl='git log --oneline --decorate'
 # git backup to repo
 alias gitup='git push --mirror'
 
+# update all submodules
+alias gsp='git submodule foreach git pull origin master'
+
 
 # Node.js
 alias nose="sudo node server.js"
