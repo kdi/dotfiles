@@ -88,6 +88,9 @@ alias gsp='git submodule foreach git pull origin master'
 alias nose="sudo node server.js"
 alias node-env="export NODE_ENV=$1 | echo Node environment set to $1"
 
+# list all top-level modules with their versions
+alias npml=="npm list $@ | grep ^[├└]"
+
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
