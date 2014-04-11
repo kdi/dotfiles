@@ -83,6 +83,9 @@ alias gitup='git push --mirror'
 # update all submodules
 alias gsp='git submodule foreach git pull origin master'
 
+# publish to a github site
+alias gitsite='git push github master:gh-pages'      
+
 
 # Node.js
 alias nose="sudo node server.js"
