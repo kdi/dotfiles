@@ -86,13 +86,16 @@ alias gsp='git submodule foreach git pull origin master'
 # git tag delete, including remote (origin)
 alias gtd = git tag -d $1 | git push origin :refs/tags/$1"
 
+# publish to a github site
+alias gitsite='git push github master:gh-pages'      
+
 
 # Node.js
 alias nose="sudo node server.js"
 alias node-env="export NODE_ENV=$1 | echo Node environment set to $1"
 
 # list all top-level modules with their versions
-alias npml=="npm list $@ | grep ^[├└]"
+alias npml="npm list $@ | grep ^[├└]"
 
 
 # IP addresses
