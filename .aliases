@@ -83,6 +83,9 @@ alias gitup='git push --mirror'
 # update all submodules
 alias gsp='git submodule foreach git pull origin master'
 
+# git tag delete, including remote (origin)
+alias gtd = git tag -d $1 | git push origin :refs/tags/$1"
+
 
 # Node.js
 alias nose="sudo node server.js"
