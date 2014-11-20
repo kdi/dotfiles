@@ -18,7 +18,9 @@ let mapleader=","
 " Local dirs
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
-set undodir=~/.vim/undo
+if v:version >= 703
+  set undodir=~/.vim/undo
+endif
 
 " Set some junk
 set autoindent " Copy indent from last line when starting new line.
@@ -29,13 +31,17 @@ set diffopt+=iwhite " Ignore whitespace changes (focus on code changes)
 set encoding=utf-8 nobomb " BOM often causes trouble
 set esckeys " Allow cursor keys in insert mode.
 set expandtab " Expand tabs to spaces
-set foldcolumn=4 " Column to show folds
-set foldenable
-set foldlevel=2
-" set foldlevelstart=2 " Sets `foldlevel` when editing a new buffer
-set foldmethod=syntax " Markers are used to specify folds.
-set foldminlines=0 " Allow folding single lines
-set foldnestmax=3 " Set max fold nesting level
+if v:version >= 703
+  set foldcolumn=4 " Column to show folds
+  set foldenable
+  set foldlevel=2
+  " set foldlevelstart=2 " Sets `foldlevel` when editing a new buffer
+  set foldmethod=syntax " Markers are used to specify folds.
+  set foldminlines=0 " Allow folding single lines
+  set foldnestmax=3 " Set max fold nesting level
+  set mouse=a " Enable moouse in all in all modes.
+  set undofile " Persistent Undo.
+endif
 set formatoptions=
 set formatoptions+=c " Format comments
 set formatoptions+=r " Continue comments by default
@@ -57,7 +63,6 @@ set lispwords+=defpartial,defpage " Noir core
 set lispwords+=defaction,deffilter,defview,defsection " Ciste core
 set lispwords+=describe,it " Speclj TDD/BDD
 set magic " Enable extended regexes.
-set mouse=a " Enable moouse in all in all modes.
 set noerrorbells " Disable error bells.
 set nojoinspaces " Only insert single space after a '.', '?' and '!' with a join command.
 set nostartofline " Don't reset cursor to start of line when moving around.
@@ -81,7 +86,6 @@ set suffixes=.bak,~,.swp,.swo,.o,.d,.info,.aux,.log,.dvi,.pdf,.bin,.bbl,.blg,.br
 set title " Show the filename in the window titlebar.
 set ttyfast " Send more characters at a given time.
 set ttymouse=xterm " Set mouse type to xterm.
-set undofile " Persistent Undo.
 set visualbell " Use visual bell instead of audible bell (annnnnoying)
 set wildchar=<TAB> " Character for CLI expansion (TAB-completion).
 set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj,*.min.js
@@ -219,9 +223,11 @@ autocmd BufReadPost *
   \   exe "normal! g`\"" |
   \ endif
 
-" Set relative line numbers
-set relativenumber " Use relative line numbers. Current line is still in status bar.
-au BufReadPost,BufNewFile * set relativenumber
+if v:version >= 703
+  " Set relative line numbers
+  set relativenumber " Use relative line numbers. Current line is still in status bar.
+  au BufReadPost,BufNewFile * set relativenumber
+endif
 
 " Emulate bundles, allow plugins to live independantly. Easier to manage.
 " call pathogen#runtime_append_all_bundles()
@@ -259,3 +265,4 @@ let g:vimclojure#FuzzyIndent = 1 " Names beginning in 'def' or 'with' to be inde
 
 " Rainbow Parenthesis
 nnoremap <leader>rp :RainbowParenthesesToggle<CR>
+
