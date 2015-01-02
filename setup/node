@@ -33,3 +33,5 @@ npm install -g grunt
 npm install -g brisk
 npm install -g crudr
 npm install -g uglify-js
+npm install -g imageoptim-cli
+npm install -g bower-installer
