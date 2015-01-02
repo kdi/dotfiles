@@ -75,8 +75,8 @@
 	pushInsteadOf = "git://gist.github.com/"
 [url "git://gist.github.com/"]
 	insteadOf = "gist:"
-[url "ssh://git%kdiweb.net@kdiweb.net/home/96197/data/git/"]
-	insteadof = git@kdi:
+[url "ssh://git%kdi.co@kdi.co/home/96197/data/git/"]
+	insteadof = git@kdi.co:
 
 # Support SQLite3 databases
 [merge "sqlite3"]
