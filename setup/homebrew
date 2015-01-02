@@ -13,7 +13,7 @@ then
   exit
 else
   echo "  + Homebrew found."
-  # Let's install some software ;) 
+  # Let's install some software ;)
   # -grc and coreutils
   brew install grc coreutils
   # - Imagesmap
@@ -24,5 +24,6 @@ else
   brew install redis
   # - image manipulation
   brew install imagemagick
-
+  # - ffmpeg for video encoding
+  brew install ffmpeg --with-libvorbis --with-nonfree --with-gpl --with-libvpx --with-pthreads --with-libx264 --with-libfaac --with-theora --with-libogg
 fi
