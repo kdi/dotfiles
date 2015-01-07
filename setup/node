@@ -35,3 +35,4 @@ npm install -g crudr
 npm install -g uglify-js
 npm install -g imageoptim-cli
 npm install -g bower-installer
+npm install -g localtunnel
