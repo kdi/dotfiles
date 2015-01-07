@@ -22,16 +22,16 @@ fi
 
 # Install commonly used modules
 npm install -g bower
-npm install -g express
-npm install -g aws-lib
-npm install -g s3
-npm install -g mongoose
+#npm install -g express
+#npm install -g aws-lib
+#npm install -g s3
+#npm install -g mongoose
 npm install -g webshot
 npm install -g less
 npm install -g imagemagick
 npm install -g grunt
-npm install -g brisk
-npm install -g crudr
+#npm install -g brisk
+#npm install -g crudr
 npm install -g uglify-js
 npm install -g imageoptim-cli
 npm install -g bower-installer
