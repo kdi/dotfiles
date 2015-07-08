@@ -1,10 +1,11 @@
 # ssh to kdi servers
-alias ssh.mt="ssh kdiweb.net@s96197.gridserver.com"
-alias ssh.mtg="ssh git%kdiweb.net@s96197.gridserver.com"
+alias ssh.mt="ssh kdi.co@web.kdi.io"
+alias ssh.mtg="ssh git%kdi.co@web.kdi.io"
 alias ssh.kdi="ssh root@kdi.io"
 alias ssh.git="ssh git@kdi.io"
 # these servers don't allow ssh from the outside world...
 alias ssh.s01="ssh root@s01.kdi.io"
+
 
 # Easier navigation: .., ..., ~ and -
 alias ..="cd .."
