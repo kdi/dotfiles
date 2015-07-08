@@ -3,7 +3,8 @@ alias ssh.mt="ssh kdiweb.net@s96197.gridserver.com"
 alias ssh.mtg="ssh git%kdiweb.net@s96197.gridserver.com"
 alias ssh.kdi="ssh root@kdi.io"
 alias ssh.git="ssh git@kdi.io"
-alias ssh.s01="ssh root@s01.kdiweb.net"
+# these servers don't allow ssh from the outside world...
+alias ssh.s01="ssh root@s01.kdi.io"
 
 # Easier navigation: .., ..., ~ and -
 alias ..="cd .."
@@ -29,10 +30,14 @@ alias oo="open ."
 
 
 # programs
-alias hosts='sudo $EDITOR /etc/hosts'   # yes I occasionally 127.0.0.1 twitter.com ;)
+alias hosts="sudo $EDITOR /etc/hosts"
 alias redis="redis-server ~/.redis/redis.conf"
 alias lesscss="lessc assets/less/main.less assets/css/main.css"
 alias lessmin="lessc -x assets/less/main.less assets/css/main.min.css"
+# - XAMPP 
+alias lh="sudo /opt/lampp/lampp start" # no stop command?
+# - Monit
+alias mstatus="sudo monit status"
 
 
 # Detect which `ls` flavor is in use
