@@ -145,6 +145,9 @@ alias v="vim"
 # File size
 alias fs="stat -f \"%z bytes\""
 
+# Permanently delete
+alias del="shred -u -z -n 26 $1"
+
 # ROT13-encode text. Works for decoding, too! ;)
 alias rot13='tr a-zA-Z n-za-mN-ZA-M'
 
