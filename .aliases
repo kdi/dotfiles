@@ -36,7 +36,8 @@ alias redis="redis-server ~/.redis/redis.conf"
 alias lesscss="lessc assets/less/main.less assets/css/main.css"
 alias lessmin="lessc -x assets/less/main.less assets/css/main.min.css"
 # - XAMPP 
-alias lh="sudo /opt/lampp/lampp start" # no stop command?
+alias lh="sudo /opt/lampp/lampp start"
+alias lamp="sudo /opt/lampp/lampp ${status}"
 # - Monit
 alias mstatus="sudo monit status"
 
