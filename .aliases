@@ -10,6 +10,7 @@ alias ssh.s03="ssh root@s03.kdi.io"
 alias ssh.s04="ssh root@s04.kdi.io"
 alias ssh.s05="ssh root@s05.kdi.io"
 
+
 # Easier navigation: .., ..., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."
