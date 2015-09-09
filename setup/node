@@ -21,18 +21,23 @@ fi
 
 
 # Install commonly used modules
+# - tools
 npm install -g bower
+npm install -g grunt
+npm install -g less
+# - libs
+npm install -g node-gyp
+npm install -g bcrypt@0.8.3
+npm install -g imagemagick
+npm install -g imageoptim-cli
+# - app deps
+npm install -g uglify-js
+npm install -g bower-installer
 #npm install -g express
 #npm install -g aws-lib
 #npm install -g s3
 #npm install -g mongoose
-npm install -g webshot
-npm install -g less
-npm install -g imagemagick
-npm install -g grunt
+#npm install -g webshot
 #npm install -g brisk
 #npm install -g crudr
-npm install -g uglify-js
-npm install -g imageoptim-cli
-npm install -g bower-installer
-npm install -g localtunnel
+#npm install -g localtunnel
