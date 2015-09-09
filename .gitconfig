@@ -80,8 +80,8 @@
 
 # Support SQLite3 databases
 [merge "sqlite3"]
-    name = sqlite3 merge driver
-    driver = merge-sqlite3 %O %A %B
+	name = sqlite3 merge driver
+	driver = merge-sqlite3 %O %A %B
 [diff "sqlite3"]
-    name = sqlite3 diff driver
-    command = diff-sqlite3
+	name = sqlite3 diff driver
+	command = diff-sqlite3
