@@ -5,7 +5,10 @@ alias ssh.kdi="ssh root@kdi.io"
 alias ssh.git="ssh git@kdi.io"
 # these servers don't allow ssh from the outside world...
 alias ssh.s01="ssh root@s01.kdi.io"
-
+alias ssh.s02="ssh root@s02.kdi.io"
+alias ssh.s03="ssh root@s03.kdi.io"
+alias ssh.s04="ssh root@s04.kdi.io"
+alias ssh.s05="ssh root@s05.kdi.io"
 
 # Easier navigation: .., ..., ~ and -
 alias ..="cd .."
@@ -38,6 +41,7 @@ alias lessmin="lessc -x assets/less/main.less assets/css/main.min.css"
 # - XAMPP 
 alias lh="sudo /opt/lampp/lampp start"
 alias lamp="sudo /opt/lampp/lampp ${status}"
+alias kiss='sudo ln -sfn $(pwd) /opt/lampp/public'
 # - Monit
 alias mstatus="sudo monit status"
 
@@ -114,8 +118,8 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en1"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 #alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
-alias myip="ifconfig | grep inet  | grep -v 127.0.0.1 | cut -d\   -f2"
-
+#alias myip="ifconfig | grep inet  | grep -v 127.0.0.1 | cut -d\   -f2"
+alias myip="ifconfig | grep inet  | grep -v 127.0.0.1 | grep -v inet6"
 
 # Enhanced WHOIS lookups
 alias whois="whois -h whois-servers.net"
