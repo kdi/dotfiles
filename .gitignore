@@ -14,3 +14,6 @@ ehthumbs.db
 # Files that might appear on external disks
 .Spotlight-V100
 .Trashes
+
+# Files that end in tilde (text backups on Linux)
+*.*~
