@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# OpenSSL: create a new certificate for a specific domain
+
+# ask for domain name
+read -p "Domain: " domain;
+
+# place key/csr file in the same folder
+openssl genrsa 4096 > domain.key;
+openssl req -new -sha256 -key domain.key -subj "/C=US/ST=California/L=San Francisco/O=KDI/OU=Web Admin/CN=$domain" > domain.csr;
+
+exit;
