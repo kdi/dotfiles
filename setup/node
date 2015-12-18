@@ -25,15 +25,16 @@ fi
 npm install -g bower
 npm install -g grunt
 npm install -g less
-# - libs
-npm install -g node-gyp
-npm install -g bcrypt@0.8.3
-npm install -g imagemagick
-npm install -g imageoptim-cli
-# - app deps
 npm install -g uglify-js
-npm install -g bower-installer
-#npm install -g express
+# - libs
+npm install -g bcrypt@0.8.3
+npm install -g ccap@0.6.0
+npm install -g express@4.12.4
+#npm install -g node-gyp
+# - app deps
+#npm install -g bower-installer
+#npm install -g imagemagick
+#npm install -g imageoptim-cli
 #npm install -g aws-lib
 #npm install -g s3
 #npm install -g mongoose
