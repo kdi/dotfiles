@@ -5,8 +5,15 @@
 # ask for domain name
 read -p "Domain: " domain;
 
+# key size
+echo "Select key size (default: 4096)";
+read -i "4096" -e key;
+
+# Notify what's being generated
+echo "Generating a new $key key/csr for $domain";
+
 # place key/csr file in the same folder
-openssl genrsa 4096 > domain.key;
-openssl req -new -sha256 -key domain.key -subj "/C=US/ST=California/L=San Francisco/O=KDI/OU=Web Admin/CN=$domain" > domain.csr;
+openssl genrsa $key > domain.key;
+openssl req -new -sha256 -key domain.key -subj "/C=US/ST=California/L=San Francisco/O=KDI/OU=Web Admin/CN=$domain" -config <(cat /etc/ssl/openssl.cnf <(printf "[SAN]\nsubjectAltName=DNS:$domain,DNS:www.$domain,DNS:cdn.$domain")) > domain.csr;
 
 exit;
