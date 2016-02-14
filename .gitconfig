@@ -87,3 +87,5 @@
 [diff "sqlite3"]
     name = sqlite3 diff driver
     command = diff-sqlite3
+[push]
+        default = simple
