@@ -14,6 +14,6 @@ echo "Generating a new $key key/csr for $domain";
 
 # place key/csr file in the same folder
 openssl genrsa $key > domain.key;
-openssl req -new -sha256 -key domain.key -subj "/C=US/ST=California/L=San Francisco/O=KDI/OU=Web Admin/CN=$domain" -reqexts SAN -config <(cat /etc/ssl/openssl.cnf <(printf "[SAN]\nsubjectAltName=DNS:$domain,DNS:www.$domain,DNS:cdn.$domain")) > domain.csr;
+openssl req -new -sha256 -key domain.key -subj "/C=US/ST=California/L=San Francisco/O=KDI/OU=Web Admin/CN=$domain" -reqexts SAN -config <(cat /etc/ssl/openssl.cnf <(printf "[SAN]\nsubjectAltName=DNS:$domain,DNS:www.$domain,DNS:cdn.$domain,DNS:dev.$domain")) > domain.csr;
 
 exit;
