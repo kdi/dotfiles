@@ -82,7 +82,7 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 
 # init z   https://github.com/rupa/z
-. ~/code/z/z.sh
+#. ~/code/z/z.sh
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
