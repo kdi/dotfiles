@@ -1,15 +1,6 @@
-# ssh to kdi servers
-alias ssh.mt="ssh kdi.co@web.kdi.io"
-alias ssh.mtg="ssh git%kdi.co@web.kdi.io"
+# ssh to kdi.io
 alias ssh.kdi="ssh root@kdi.io"
 alias ssh.git="ssh git@kdi.io"
-# these servers don't allow ssh from the outside world...
-alias ssh.s01="ssh root@s01.kdi.io"
-alias ssh.s02="ssh root@s02.kdi.io"
-alias ssh.s03="ssh root@s03.kdi.io"
-alias ssh.s04="ssh root@s04.kdi.io"
-alias ssh.s05="ssh root@s05.kdi.io"
-
 
 # Easier navigation: .., ..., ~ and -
 alias ..="cd .."
@@ -39,7 +30,7 @@ alias hosts="sudo $EDITOR /etc/hosts"
 alias redis="redis-server ~/.redis/redis.conf"
 alias lesscss="lessc assets/less/main.less assets/css/main.css"
 alias lessmin="lessc -x assets/less/main.less assets/css/main.min.css"
-# - XAMPP 
+# - XAMPP
 alias lh="sudo /opt/lampp/lampp start"
 alias lamp="sudo /opt/lampp/lampp ${status}"
 alias kiss='sudo ln -sfn $(pwd) /opt/lampp/public'
@@ -67,7 +58,7 @@ alias lsd='ls -l ${colorflag} | grep "^d"'
 alias ls="command ls ${colorflag}"
 export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.ogg=01;35:*.mp3=01;35:*.wav=01;35:'
 
-# Read all files in current dir (recursive) for a string 
+# Read all files in current dir (recursive) for a string
 alias rd="grep -rnw ./ -e $1"
 
 
@@ -103,7 +94,7 @@ alias gsp='git submodule foreach git pull origin master'
 alias gtd="git tag -d $1 | git push origin :refs/tags/$1"
 
 # publish to a github site
-alias gitsite='git push github master:gh-pages'      
+alias gitsite='git push github master:gh-pages'
 
 
 # Node.js
