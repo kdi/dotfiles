@@ -1,3 +1,13 @@
+/* Network */
+
+# login to a drone server
+function drone(){
+	ssh -i "/root/access/drone.pem" root@"$1".kdi.io
+}
+
+
+/* FILES */
+
 # Create a new directory and enter it
 function md() {
 	mkdir -p "$@" && cd "$@"
