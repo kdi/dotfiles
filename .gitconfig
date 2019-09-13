@@ -38,7 +38,7 @@
 	whitespace = space-before-tab,indent-with-non-tab,trailing-space
 	# How to handle line endings (MacOSX/Linux) - Windows users whould have this set to 'true'
 	autocrlf = input
-	
+
 [color]
 	# Use colors in Git commands that are capable of colored output when outputting to the terminal
 	ui = auto
@@ -82,10 +82,11 @@
 
 # Support SQLite3 databases
 [merge "sqlite3"]
-    name = sqlite3 merge driver
-    driver = merge-sqlite3 %O %A %B
+	name = sqlite3 merge driver
+	driver = merge-sqlite3 %O %A %B
 [diff "sqlite3"]
-    name = sqlite3 diff driver
-    command = diff-sqlite3
+	name = sqlite3 diff driver
+#	command = diff-sqlite3
+	textconv = "echo .dump | sqlite3"
 [push]
-        default = simple
+	default = simple
