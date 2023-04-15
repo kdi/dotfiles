@@ -99,7 +99,7 @@ alias gitsite='git push github master:gh-pages'
 
 
 # Node.js
-alias nose="sudo node server.js"
+alias nose="sudo $(which node) server.js"
 alias node-env="export NODE_ENV=$1 | echo Node environment set to $1"
 
 # list all top-level modules with their versions
@@ -107,6 +107,9 @@ alias npml="npm list $@ | grep ^[├└]"
 
 # nested node modules
 alias npmi="npm install --legacy-bundling"
+
+# List global modules
+alias ngm="npm list -g --depth 0"
 
 
 # IP addresses
