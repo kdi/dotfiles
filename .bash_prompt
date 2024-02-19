@@ -12,11 +12,11 @@ if tput setaf 1 &> /dev/null; then
 	tput sgr0
 	if [[ $(tput colors) -ge 256 ]] 2>/dev/null; then
 		FUCHSIA=$(tput setaf 13)
-		MAGENTA=$(tput setaf 127)
+		MAGENTA=$(tput setaf 207)
 		ORANGE=$(tput setaf 203)
 		GREEN=$(tput setaf 46)
 		CYAN=$(tput setaf 87)
-		PURPLE=$(tput setaf 207)
+		PURPLE=$(tput setaf 93)
 		YELLOW=$(tput setaf 227)
 		WHITE=$(tput setaf 255)
 	else
@@ -61,7 +61,7 @@ function parse_git_branch() {
 # Display username/host (with no condition)
 function usernamehost() {
 	#if [ $USER != $default_username ]; then
-	echo "${CYAN}$USER@$HOSTNAME ${RESET}in ";
+	echo "${CYAN}$USER@$HOSTNAME ${WHITE}in ";
 	#fi
 }
 
@@ -81,6 +81,8 @@ function usernamehost() {
 ## Legacy
 # PS1="\[\e]2;$PWD\[\a\]\[\e]1;\]$(basename "$(dirname "$PWD")")/\W\[\a\]${BOLD}\$(usernamehost)\[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
 ## Drone
-#PS1="\[\e]2;$PWD\[\a\]\[\e]1;\]$(basename "$(dirname "$PWD")")/\W\[\a\]${BOLD}\$(usernamehost)\[$GREEN\]\w\[$RESET\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$FUCHSIA\]\$(parse_git_branch)\[$GREEN\]\n\$ \[$WHITE\]"
+#PS1="\[\e]2;$PWD\[\a\]\[\e]1;\]$(basename "$(dirname "$PWD")")/\W\[\a\]${BOLD}\$(usernamehost)\[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$FUCHSIA\]\$(parse_git_branch)\[$GREEN\]\n\$ \[$RESET\]"
 ## IO
-PS1="\[\e]2;$PWD\[\a\]\[\e]1;\]$(basename "$(dirname "$PWD")")/\W\[\a\]${BOLD}\[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
+#PS1="\[\e]2;$PWD\[\a\]\[\e]1;\]$(basename "$(dirname "$PWD")")/\W\[\a\]${BOLD}\$(usernamehost)\[$YELLOW\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$PURPLE\]\n\$ \[$RESET\]"
+## Local
+PS1="\[\e]2;$PWD\[\a\]\[\e]1;\]$(basename "$(dirname "$PWD")")/\W\[\a\]${BOLD}\[$YELLOW\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$MAGENTA\]\$(parse_git_branch)\[$MAGENTA\]\n\$ \[$RESET\]"
