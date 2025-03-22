@@ -3,7 +3,7 @@ PS1="\w$ "  # Custom prompt text (full pwd).
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/.{path,bash_prompt,exports,aliases,functions,profile}; do
+for file in ~/.{path,bash_prompt,exports,aliases,functions,inputrc,profile}; do
 	[ -r "$file" ] && source "$file"
 done
 unset file
