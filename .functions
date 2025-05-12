@@ -2,7 +2,7 @@
 
 # login to a drone server
 function drone(){
-	ssh -i "/root/access/drone.pem" root@"$1".kdi.io
+	ssh -i "/local/deploy/keys/servers/drone.pem" root@"$1".kdi.io
 }
 
 
