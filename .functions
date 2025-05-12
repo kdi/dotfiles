@@ -1,4 +1,4 @@
-/* Network */
+## Network ##
 
 # login to a drone server
 function drone(){
@@ -6,7 +6,7 @@ function drone(){
 }
 
 
-/* FILES */
+## FILES ##
 
 # Create a new directory and enter it
 function md() {
